@@ -1,0 +1,10 @@
+{{ if .IsNamedParams }}
+	<a href="{{ if .Get "src" }}{{ .Get "src" }}{{ end }}" class="{{ if .Get "class" }}{{ .Get "class" }}{{ else }}fancybox{{ end }}" title="{{ if .Get "title" }}{{ .Get "title" }}{{ end }}">
+		<img src="{{ if .Get "src" }}{{ .Get "src" }}{{ end }}" alt="{{ if .Get "title" }}{{ .Get "title" }}{{ end }}" />
+	</a>
+{{ else }}
+	<a href="{{ .Get 1 }}" class="fancybox" title="{{ .Get 2 }}">
+		<img src="{{ .Get 0 }}" alt="{{ .Get 2 }}" />
+	</a>
+{{ end }}
+

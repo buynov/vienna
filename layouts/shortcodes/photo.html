@@ -3,8 +3,8 @@
 		<img src="{{ if .Get "src" }}{{ .Get "src" }}{{ end }}" alt="{{ if .Get "title" }}{{ .Get "title" }}{{ end }}" />
 	</a>
 {{ else }}
-	<a href="{{ .Get 1 }}" class="fancybox" title="{{ .Get 2 }}">
-		<img src="{{ .Get 0 }}" alt="{{ .Get 2 }}" />
+	<a href="{{ .Get 0 }}" class="fancybox" {{ if len .Params | eq 3 }}title="{{ .Get 2 }}"{{ end }}>
+		<img src="{{ .Get 1 }}" {{ if len .Params | eq 3 }}alt="{{ .Get 2 }}"{{ end }} />
 	</a>
 {{ end }}
 
